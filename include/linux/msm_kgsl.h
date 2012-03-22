@@ -33,7 +33,7 @@
 #define KGSL_CLK_MEM_IFACE 0x00000010
 #define KGSL_CLK_AXI	0x00000020
 
-#define KGSL_MAX_PWRLEVELS 5
+#define KGSL_MAX_PWRLEVELS 7
 
 #define KGSL_CONVERT_TO_MBPS(val) \
 	(val*1000*1000U)
@@ -142,6 +142,7 @@ struct kgsl_version {
 struct kgsl_device_platform_data {
 	struct kgsl_pwrlevel pwrlevel[KGSL_MAX_PWRLEVELS];
 	int init_level;
+	int max_level;
 	int num_levels;
 	int (*set_grp_async)(void);
 	unsigned int idle_timeout;
